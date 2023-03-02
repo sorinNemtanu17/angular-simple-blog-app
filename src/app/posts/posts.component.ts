@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Post } from '../post.model';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class PostsComponent {
 
+  posts$: Observable<Post[]> = this.postService.getAllPosts()
+
+  constructor(private postService: PostsService) { }
 }
