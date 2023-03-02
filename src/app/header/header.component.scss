@@ -1,0 +1,23 @@
+.header {
+  padding: 2rem;
+  &__title {
+    font-size: large;
+    padding: 2rem 0;
+  }
+  &__icon {
+    max-width: 5rem;
+
+    img {
+      width: 100%;
+    }
+  }
+  &__menu {
+    list-style-type: none;
+
+    &__link {
+      & > * {
+        text-decoration: none;
+      }
+    }
+  }
+}

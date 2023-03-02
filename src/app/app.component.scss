@@ -1,0 +1,9 @@
+.main-content {
+  display: flex;
+  &__side-nav {
+    flex: 1 1;
+  }
+  &__content {
+    flex: 2 1;
+  }
+}
