@@ -1,0 +1,89 @@
+[
+  {
+    "id": "10",
+    "title": "5 Simple Home Remedies for Common Cold",
+    "tags": [
+      "health",
+      "home remedies"
+    ],
+    "content": "Don't let a common cold bring you down. Try these 5 simple home remedies to alleviate your symptoms: 1. Drink plenty of fluids. 2. Gargle with salt water. 3. Take steam inhalation. 4. Use a humidifier. 5. Rest and sleep well.",
+    "image_url": null,
+    "author": "Jane Doe",
+    "email": "jane.doe@example.com"
+  },
+  {
+    "id": "11",
+    "title": "The Benefits of Mindful Meditation",
+    "tags": [
+      "mindfulness",
+      "meditation",
+      "mental health"
+    ],
+    "content": "Mindful meditation can help improve your mental health and well-being. It can reduce stress, anxiety, and depression, and increase your sense of calm and happiness. Take a few minutes each day to sit quietly and focus on your breath. Be present in the moment and observe your thoughts without judgment.",
+    "image_url": "https://cdn.pixabay.com/photo/2013/05/12/18/55/balance-110850_1280.jpg",
+    "author": "John Smith",
+    "email": "john.smith@example.com"
+  },
+  {
+    "id": "12",
+    "title": "How to Start a Successful Blog",
+    "tags": [
+      "blogging",
+      "online business"
+    ],
+    "content": "Blogging can be a great way to share your knowledge and expertise with the world. Here are a few tips to help you start a successful blog: 1. Choose a niche. 2. Write high-quality content. 3. Promote your blog on social media. 4. Build an email list. 5. Monetize your blog through affiliate marketing or sponsored posts.",
+    "image_url": "https://cdn.pixabay.com/photo/2015/05/31/10/55/man-791049_1280.jpg",
+    "author": "Sara Johnson",
+    "email": "sara.johnson@example.com"
+  },
+  {
+    "id": "13",
+    "title": "10 Easy and Healthy Meal Prep Ideas",
+    "tags": [
+      "meal prep",
+      "healthy eating"
+    ],
+    "content": "Meal prepping can save you time and money, and help you eat healthier. Here are 10 easy and healthy meal prep ideas: 1. Overnight oats with fruits and nuts. 2. Grilled chicken with roasted veggies. 3. Brown rice with stir-fried veggies and tofu. 4. Egg muffins with spinach and cheese. 5. Quinoa salad with roasted chickpeas and avocado.",
+    "image_url": "https://cdn.pixabay.com/photo/2017/07/28/13/29/spices-2548653_1280.jpg",
+    "author": "Mark Lee",
+    "email": "mark.lee@example.com"
+  },
+  {
+    "id": "14",
+    "title": "The Benefits of Reading Books",
+    "tags": [
+      "reading",
+      "personal development"
+    ],
+    "content": "Reading books can improve your cognitive function, boost your creativity, and expand your knowledge and understanding of the world. It can also help reduce stress and anxiety, and increase empathy and compassion. Make time to read for pleasure and personal growth.",
+    "image_url": "https://cdn.pixabay.com/photo/2014/09/05/18/32/old-books-436498_1280.jpg",
+    "author": "Mary Brown",
+    "email": "mary.brown@example.com"
+  },
+  {
+    "id": "15",
+    "title": "The Importance of Self-Care",
+    "tags": [
+      "self-care",
+      "mental health",
+      "wellness"
+    ],
+    "content": "Self-care is an essential part of maintaining your mental and emotional well-being. It involves taking time to care for your physical, emotional, and spiritual needs. Some examples of self-care activities include getting enough sleep, eating nutritious foods, practicing mindfulness, and engaging in hobbies or activities that bring you joy. Prioritizing self-care can help you reduce stress, improve your mood, and enhance your overall quality of life.",
+    "image_url": null,
+    "author": "Emily Davis",
+    "email": "emily.davis@example.com"
+  },
+  {
+    "id": "16",
+    "title": "How to Stay Motivated When Pursuing Your Goals",
+    "tags": [
+      "motivation",
+      "goal-setting",
+      "personal development"
+    ],
+    "content": "Staying motivated is essential when working towards your goals. Here are a few tips to help you stay motivated: 1. Break your goals into smaller, more manageable tasks. 2. Celebrate your progress along the way. 3. Surround yourself with supportive people. 4. Visualize your success. 5. Stay positive and focus on the benefits of achieving your goals. Remember that setbacks and obstacles are a natural part of the process, and don't let them discourage you.",
+    "image_url": null,
+    "author": "David Kim",
+    "email": "david.kim@example.com"
+  }
+]
