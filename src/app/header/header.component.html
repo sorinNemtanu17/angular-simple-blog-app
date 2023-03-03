@@ -10,17 +10,19 @@
 	</div>
 	<ul class="header__menu">
 		<li class="header__menu__link">
-			<a routerLink="home"
+			<button routerLink="home"
+				class="btn"
 				routerLinkActive="active">
-				home
-			</a>
+				{{'home' | titlecase}}
+			</button>
 		</li>
 
 		<li class="header__menu__link">
-			<a routerLink="posts"
+			<button routerLink="posts"
+				class="btn"
 				routerLinkActive="active">
 				{{'view posts' | titlecase}}
-			</a>
+			</button>
 		</li>
 	</ul>
 </header>

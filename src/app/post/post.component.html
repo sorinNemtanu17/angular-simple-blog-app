@@ -1,1 +1,19 @@
-<p>post works!</p>
+<article *ngIf="post"
+	[imageUrl]="post.image_url"
+	setBackgroundImage>
+	<div class="post-details">
+
+		<h3>{{post.title}}</h3>
+		<p>{{post.tags}}</p>
+		<p>{{post.content}}</p>
+		<!-- <div class="image-container">
+      <img [src]="post.image_url"
+        [alt]="post.title">
+    </div> -->
+		<p>{{post.author}}</p>
+		<p>{{post.email}}</p>
+
+		<button class="btn">Back</button>
+	</div>
+</article>
+<!-- <pre>{{post | json}}</pre> -->

@@ -7,14 +7,16 @@ import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './post/post.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { SetBackgroundImageDirective } from './set-background-image.directive'
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     PostsComponent,
     PostComponent,
-    HeaderComponent
+    HeaderComponent,
+    SetBackgroundImageDirective
   ],
   imports: [
     BrowserModule,

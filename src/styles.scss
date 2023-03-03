@@ -4,10 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Raleway", sans-serif;
 }
 body {
   background: #f3f3f3;
+  min-width: 800px;
+  font-family: "Raleway", sans-serif;
 }
 .text {
   text-transform: uppercase;
@@ -15,4 +16,24 @@ body {
   font-weight: 700;
   text-decoration: none;
   color: #1d1d1d;
+}
+a {
+  text-decoration: none;
+}
+.btn {
+  font-size: 1.2rem;
+  //word-wrap: break-word;
+  //color: #fff;
+  background: transparent;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  transition: color, transform 0.3s linear;
+  color: #f3f3f3;
+  &:hover,
+  .active {
+    color: #f87f148a;
+    transform: scale(1.2, 1.2);
+  }
 }
