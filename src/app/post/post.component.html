@@ -4,7 +4,9 @@
 	<div class="post-details">
 
 		<h3>{{post.title}}</h3>
-		<p>{{post.tags}}</p>
+		<ul class="post-details__tags">
+			<li *ngFor="let tag of post.tags">{{tag}}</li>
+		</ul>
 		<p>{{post.content}}</p>
 		<!-- <div class="image-container">
       <img [src]="post.image_url"
@@ -13,7 +15,10 @@
 		<p>{{post.author}}</p>
 		<p>{{post.email}}</p>
 
-		<button class="btn">Back</button>
+		<button class="btn"
+			routerLink="/posts">
+			Back
+		</button>
 	</div>
 </article>
 <!-- <pre>{{post | json}}</pre> -->
