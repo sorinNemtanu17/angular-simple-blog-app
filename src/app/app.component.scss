@@ -8,9 +8,9 @@
     padding-top: 5rem;
     flex: 2 1;
   }
-  @media only screen and (max-width: 800px) {
+  @media (max-width: 800px) {
     &__side-nav {
-      //display: none;
+      display: none;
     }
   }
 }

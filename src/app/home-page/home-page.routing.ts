@@ -4,9 +4,8 @@ import { HomePageComponent } from "./home-page.component"
 
 const appHomePageRouting: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: 'home', component: HomePageComponent }
+  { path: '', component: HomePageComponent }
 ]
-
 
 @NgModule({
   imports: [RouterModule.forChild(appHomePageRouting)],

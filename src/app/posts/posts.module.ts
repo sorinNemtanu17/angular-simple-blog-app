@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { PostsRoutingModule } from './posts.routing';
 
@@ -10,17 +9,15 @@ import { SharedModule } from '@shared/shared.module';
   declarations: [
     PostsComponent,
     PostComponent,
-    // SetBackgroundImageDirective
   ],
   imports: [
     PostsRoutingModule,
     SharedModule,
   ],
   exports: [
-    // PostsComponent,
-    // PostComponent,
-
+    PostsComponent,
+    PostComponent,
   ],
-  providers: [],
+
 })
 export class PostsModule { }
