@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '@shared/shared.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { PostsComponent } from './posts/posts.component';
-import { PostComponent } from './post/post.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { HttpClientModule } from '@angular/common/http';
-import { SetBackgroundImageDirective } from './set-background-image.directive'
+import { PostsModule } from './posts/posts.module';
+import { HomePageModule } from './home-page/home-page.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-    PostsComponent,
-    PostComponent,
-    HeaderComponent,
-    SetBackgroundImageDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    PostsModule,
+    HomePageModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
