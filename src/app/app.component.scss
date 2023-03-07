@@ -1,16 +1,24 @@
-.main-content {
-  //display: flex;
-
-  &__side-nav {
-    flex: 1 1;
+main {
+  margin: 0 auto;
+  width: 80vw;
+  min-width: 500px;
+  background-color: #fff;
+  &:after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    height: 10px;
+    background-image: linear-gradient(to left, red, transparent);
   }
-  &__content {
-    padding-top: 5rem;
-    flex: 2 1;
+  .side-nav {
+    margin-bottom: 5rem;
   }
-  @media (max-width: 800px) {
-    &__side-nav {
-      display: none;
-    }
+  .content {
+    padding: 2rem 0;
+    height: 100vh;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100vw;
   }
 }

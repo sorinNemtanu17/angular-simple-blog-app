@@ -9,25 +9,27 @@ import { PostsService } from '../posts.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-
 export class PostComponent implements OnInit, OnDestroy {
-  post: Post
-  subscription: Subscription
-  id: string
+  post: Post;
+  subscription: Subscription;
+  id: string;
 
-  constructor(private route: ActivatedRoute, private postsService: PostsService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private postsService: PostsService
+  ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id']
+    this.id = this.route.snapshot.params['id'];
 
-    this.subscription = this.postsService.getSinglePost(this.id).subscribe(post => {
-      this.post = post[0]
-    })
+    this.subscription = this.postsService
+      .getSinglePost(this.id)
+      .subscribe((post) => {
+        this.post = post[0];
+      });
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe()
+    this.subscription.unsubscribe();
   }
-
-
 }

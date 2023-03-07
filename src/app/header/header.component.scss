@@ -1,12 +1,14 @@
 .header {
-  min-width: 460px;
-  height: 100px;
   display: flex;
   flex-direction: column;
-
+  gap: 1rem;
+  padding: 2rem 0;
+  background-color: #fff;
   &__logo {
     display: flex;
     flex: 1 1;
+
+    padding-bottom: 2rem;
     & > * {
       display: flex;
     }
@@ -24,93 +26,35 @@
       align-items: center;
       justify-content: center;
       color: #f87f14;
-
       font-style: italic;
       text-align: center;
-      font-size: clamp(2rem, 3vw, 3rem);
+      font-size: clamp(1rem, 3vw, 4rem);
     }
   }
   &__menu {
     flex: 1 1;
     display: flex;
-
+    flex-wrap: wrap;
     & > * {
       flex: 1 1;
       display: flex;
-
+      border: 1px solid #f87f14;
+      border-left: 120px solid transparent;
+      border-right: 120px solid transparent;
+      padding: 1rem 0;
       align-items: center;
       justify-content: center;
-      height: 100%;
       transition: all 0.3s linear;
-      &:first-child {
-        background-color: #f87f14;
+    }
+    &__link {
+      button {
+        font-size: clamp(0.8rem, 3vw, 1.5rem);
+        white-space: nowrap;
       }
     }
   }
 }
 
-.active-posts {
+.active {
   color: #f87f14;
 }
-.active-home {
-  color: #fff;
-}
-
-// .header {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   height: 100vh;
-//   position: fixed;
-//   background-color: #2c3e50;
-//   width: 25%;
-//   min-width: 200px;
-//   padding: 0 2rem;
-//   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.75);
-//   &__logo {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     //width: 10rem;
-//     gap: 2rem;
-//     &__icon {
-//       max-width: 200px;
-//       img {
-//         width: 100%;
-//       }
-//     }
-//     &__title {
-//       font-size: clamp(1.5rem, 3vw, 3rem);
-//       width: 100px;
-//       display: flex;
-//       align-items: center;
-//       color: #fff;
-//     }
-//   }
-//   &__menu {
-//     list-style-type: none;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     flex-wrap: nowrap;
-//     gap: 1rem;
-//     &__link {
-//       & > * {
-//         font-size: 1.2rem;
-//         //word-wrap: break-word;
-//         //color: #fff;
-//         background: transparent;
-//         outline: none;
-//         border: none;
-//         text-align: center;
-//         &:hover,
-//         .active {
-//           color: #f87f14;
-//         }
-//       }
-//     }
-//   }
-// }
-// .active {
-//   color: #f87f14;
-// }

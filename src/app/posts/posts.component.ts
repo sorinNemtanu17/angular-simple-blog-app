@@ -9,8 +9,7 @@ import { PostsService } from './posts.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent {
+  posts$: Observable<Post[]> = this.postService.getAllPosts();
 
-  posts$: Observable<Post[]> = this.postService.getAllPosts()
-
-  constructor(private postService: PostsService) { }
+  constructor(private postService: PostsService) {}
 }

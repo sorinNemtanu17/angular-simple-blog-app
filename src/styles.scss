@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +7,7 @@
 }
 body {
   background: #2c3e501a;
-  //max-width: 400px;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   margin: 0 auto;
 }
 .text {
@@ -28,9 +25,7 @@ ul {
 }
 .btn {
   font-size: 1.2rem;
-  //word-wrap: break-word;
-  //color: #fff;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   background: transparent;
   outline: none;
   border: none;
