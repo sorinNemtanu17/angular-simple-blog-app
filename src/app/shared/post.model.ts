@@ -3,7 +3,7 @@ export interface Post {
   title: string;
   tags: string[];
   content: string;
-  image_url: any;
+  image_url: string;
   author: string;
   email: string;
 }

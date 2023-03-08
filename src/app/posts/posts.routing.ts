@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddPostComponent } from './add-post/add-post.component';
 import { PostComponent } from './post/post.component';
 
 import { PostsComponent } from './posts.component';
 
 export const postsRoutes: Routes = [
-  { path: '', component: PostsComponent },
+  {
+    path: '',
+    component: PostsComponent,
+    children: [{ path: 'add-post', component: AddPostComponent }]
+  },
   { path: ':id', component: PostComponent }
 ];
 

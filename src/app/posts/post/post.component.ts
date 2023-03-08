@@ -9,9 +9,8 @@ import { PostsService } from '../posts.service';
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.scss']
 })
-export class PostComponent implements OnInit, OnDestroy {
+export class PostComponent implements OnInit {
   post: Post;
-  subscription: Subscription;
   id: string;
 
   constructor(
@@ -22,14 +21,6 @@ export class PostComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
 
-    this.subscription = this.postsService
-      .getSinglePost(this.id)
-      .subscribe((post) => {
-        this.post = post[0];
-      });
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.post = this.postsService.getPost(this.id);
   }
 }

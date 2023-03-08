@@ -9,6 +9,7 @@ body {
   background: #2c3e501a;
   font-family: 'Playfair Display', serif;
   margin: 0 auto;
+  position: relative;
 }
 .text {
   text-transform: uppercase;
@@ -31,8 +32,6 @@ ul {
   border: none;
   text-align: center;
   cursor: pointer;
-
-  //color: #f3f3f3;
   // &:hover,
   // .active {
   //   color: #f87f148a;

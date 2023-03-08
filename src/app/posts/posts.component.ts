@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Post } from '@shared/post.model';
 import { PostsService } from './posts.service';
@@ -8,8 +8,15 @@ import { PostsService } from './posts.service';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.scss']
 })
-export class PostsComponent {
-  posts$: Observable<Post[]> = this.postService.getAllPosts();
+export class PostsComponent implements OnInit {
+  posts: Post[];
 
-  constructor(private postService: PostsService) {}
+  constructor(private postService: PostsService) { }
+
+  ngOnInit(): void {
+
+    this.postService.postsChanged$.subscribe((data) => {
+      this.posts = data;
+    });
+  }
 }
