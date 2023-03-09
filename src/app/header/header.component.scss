@@ -11,24 +11,24 @@
     & > * {
       display: flex;
     }
-    &__icon {
-      flex: 1 1;
-      align-items: center;
-      justify-content: center;
-      img {
-        width: 100px;
-      }
+  }
+  &__icon {
+    flex: 1 1;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100px;
     }
-    &__title {
-      flex: 2 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f87f14;
-      font-style: italic;
-      text-align: center;
-      font-size: clamp(1rem, 3vw, 4rem);
-    }
+  }
+  &__title {
+    flex: 2 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f87f14;
+    font-style: italic;
+    text-align: center;
+    font-size: clamp(1rem, 3vw, 4rem);
   }
   &__menu {
     flex: 1 1;
@@ -38,18 +38,18 @@
       flex: 1 1;
       display: flex;
       border: 1px solid #f87f14;
-      border-left: 120px solid transparent;
-      border-right: 120px solid transparent;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
       padding: 1rem 0;
       align-items: center;
       justify-content: center;
       transition: all 0.3s linear;
     }
-    &__link {
-      button {
-        font-size: clamp(0.8rem, 3vw, 1.5rem);
-        white-space: nowrap;
-      }
+  }
+  &__link {
+    button {
+      font-size: clamp(1rem, 3vw, 1.5rem);
+      white-space: nowrap;
     }
   }
 }

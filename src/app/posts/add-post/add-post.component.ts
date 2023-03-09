@@ -3,14 +3,11 @@ import {
   FormArray,
   FormBuilder,
   FormControl,
-  FormControlName,
   FormGroup,
-  NgControl,
   Validators
 } from '@angular/forms';
-import { map } from 'rxjs';
+
 import { PostsService } from '../posts.service';
-import { mimeType } from './mime-type.validator';
 
 @Component({
   selector: 'app-add-post',
@@ -26,22 +23,20 @@ export class AddPostComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      title: ['title', Validators.required],
-      tags: this.fb.array([]),
+      title: ['Man seating in the bus', Validators.required],
+      tags: this.fb.array(['Transport', 'Vietnam']),
       content: ['content', Validators.required],
-      image_url: ['', Validators.required],
+      image_url: [
+        'https://cdn.pixabay.com/photo/2023/02/28/03/31/man-7819801_1280.jpg',
+        Validators.required
+      ],
       author: ['sorin', Validators.required],
       email: ['email@mail.com', [Validators.required, Validators.email]]
     });
   }
 
   submitForm() {
-    //console.log(this.form.value.image_url.name);
-    const {
-      image_url: { name }
-    } = this.form.value;
-    const newPost = { ...this.form.value, image_url: name };
-    this.postService.addPost(newPost);
+    this.postService.addPost(this.form.value);
   }
   addTag() {
     const control = new FormControl('', [Validators.required]);

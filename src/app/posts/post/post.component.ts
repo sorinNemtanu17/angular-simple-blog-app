@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { Post } from '@shared/post.model';
 import { PostsService } from '../posts.service';
 
@@ -22,5 +21,9 @@ export class PostComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
 
     this.post = this.postsService.getPost(this.id);
+  }
+
+  onDelete() {
+    this.postsService.deletePost(this.id);
   }
 }

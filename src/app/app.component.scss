@@ -2,23 +2,18 @@ main {
   margin: 0 auto;
   width: 80vw;
   min-width: 500px;
-  background-color: #fff;
-  &:after {
-    content: '';
-    position: absolute;
-    left: -10px;
-    height: 10px;
-    background-image: linear-gradient(to left, red, transparent);
-  }
-  .side-nav {
+  display: flex;
+  flex-direction: column;
+
+  .header {
     margin-bottom: 1rem;
   }
   .content {
     padding: 2rem 0;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 460px) {
     width: 100vw;
   }
 }
