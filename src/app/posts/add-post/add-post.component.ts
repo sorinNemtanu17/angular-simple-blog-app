@@ -6,10 +6,7 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
-import {
-  ActivatedRoute,
-  Params,
-} from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { Post } from '@shared/post.model';
 import { Observable, Subject } from 'rxjs';
@@ -28,47 +25,46 @@ export class AddPostComponent implements OnInit {
   form: FormGroup;
   editMode = false;
   id: string;
-  selectedPost: Post
+  selectedPost: Post;
 
   constructor(
     private fb: FormBuilder,
     private postService: PostsService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.editMode = params['id'] != null;
       this.id = params['id'];
-      this.initForm()
+      this.initForm();
     });
   }
 
   private initForm() {
     this.form = this.fb.group({
-      'title': ['Man seating in the bus', Validators.required],
-      'tags': this.fb.array([]),
-      'content': ['', Validators.required],
-      'image_url': [
+      title: ['Man seating in the bus', Validators.required],
+      tags: this.fb.array([]),
+      content: ['', Validators.required],
+      image_url: [
         'https://cdn.pixabay.com/photo/2023/02/28/03/31/man-7819801_1280.jpg',
         Validators.required
       ],
-      'author': ['sorin', Validators.required],
-      'email': ['email@mail.com', [Validators.required, Validators.email]]
+      author: ['sorin', Validators.required],
+      email: ['email@mail.com', [Validators.required, Validators.email]]
     });
 
     if (this.editMode) {
-      this.selectedPost = this.postService.getPost(this.id)
+      this.selectedPost = this.postService.getPost(this.id);
       console.log(this.selectedPost);
       this.form = this.fb.group({
-        'title': this.selectedPost.title,
-        'tags': this.fb.array(this.selectedPost.tags),
-        'content': this.selectedPost.content,
-        'image_url': this.selectedPost.image_url,
-        'author': this.selectedPost.author,
-        'email': this.selectedPost.email
+        title: this.selectedPost.title,
+        tags: this.fb.array(this.selectedPost.tags),
+        content: this.selectedPost.content,
+        image_url: this.selectedPost.image_url,
+        author: this.selectedPost.author,
+        email: this.selectedPost.email
       });
-
     }
   }
 
@@ -90,7 +86,7 @@ export class AddPostComponent implements OnInit {
   }
 
   getTags() {
-    return (<FormArray>this.form.get('tags')).controls
+    return (<FormArray>this.form.get('tags')).controls;
   }
 
   onHandleAlert($event: boolean) {

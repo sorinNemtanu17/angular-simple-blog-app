@@ -33,4 +33,4 @@ export const postsRoutes: Routes = [
   imports: [RouterModule.forChild(postsRoutes)],
   exports: [RouterModule]
 })
-export class PostsRoutingModule { }
+export class PostsRoutingModule {}
