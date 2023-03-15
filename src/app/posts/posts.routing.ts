@@ -9,7 +9,22 @@ export const postsRoutes: Routes = [
   {
     path: '',
     component: PostsComponent,
-    children: [{ path: 'add-post', component: AddPostComponent }]
+    children: [
+      {
+        path: 'add-post',
+        component: AddPostComponent,
+        canDeactivate: [
+          (component: AddPostComponent) => component.canDeactivate()
+        ]
+      },
+      {
+        path: 'edit-post/:id',
+        component: AddPostComponent,
+        canDeactivate: [
+          (component: AddPostComponent) => component.canDeactivate()
+        ]
+      }
+    ]
   },
   { path: ':id', component: PostComponent }
 ];
@@ -18,4 +33,4 @@ export const postsRoutes: Routes = [
   imports: [RouterModule.forChild(postsRoutes)],
   exports: [RouterModule]
 })
-export class PostsRoutingModule {}
+export class PostsRoutingModule { }

@@ -31,4 +31,11 @@ export class PostsService {
     this.posts$.next(this.posts);
     this.router.navigate(['/posts']);
   }
+
+  editPost(id: string, newPost: Post) {
+    const oldPostIndex = this.posts.findIndex((post) => post.id === id);
+    this.posts[oldPostIndex] = { ...this.posts[oldPostIndex], ...newPost };
+    this.posts$.next(this.posts);
+    this.router.navigate(['/posts', id]);
+  }
 }

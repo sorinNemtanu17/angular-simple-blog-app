@@ -9,6 +9,7 @@
     <p>{{ post.email }}</p>
     <div class="post-details__button-group">
       <button class="btn" routerLink="/posts">Back To Posts</button>
+      <button [routerLink]="['/edit-post', post.id]" class="btn">Edit</button>
       <button (click)="onDelete()" class="btn">Delete</button>
     </div>
   </div>
