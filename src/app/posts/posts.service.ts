@@ -1,19 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Post } from '@shared/post.model';
 import { Router } from '@angular/router';
 import blogPostJson from '@assets/blog-posts.json';
 
 @Injectable()
 export class PostsService {
-  private posts: Post[] = blogPostJson;
+  private posts: Post[] = blogPostJson
   private posts$ = new BehaviorSubject<Post[]>(this.posts);
   postsChanged$ = this.posts$.asObservable();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
-  getPost(id: string): Post {
+  getAllPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>('@assets/blog-posts.json')
+  }
+
+  getPost(id: string) {
     return this.posts.find((post) => post.id === id);
   }
 

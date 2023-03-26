@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -10,62 +10,77 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { Post } from '@shared/post.model';
 import { Observable, Subject } from 'rxjs';
+import { HttpService } from '../http.service';
 import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
   styleUrls: ['./add-post.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class AddPostComponent implements OnInit {
   isDirty = false;
   isDirty$ = new Subject<boolean>();
   imagePreview: string;
-  form: FormGroup;
   editMode = false;
   id: string;
   selectedPost: Post;
 
+  form: FormGroup;
+
+
   constructor(
     private fb: FormBuilder,
     private postService: PostsService,
+    private httpService: HttpService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.editMode = params['id'] != null;
       this.id = params['id'];
-      this.initForm();
     });
+    this.initForm();
   }
 
+
+
   private initForm() {
-    this.form = this.fb.group({
-      title: ['Man seating in the bus', Validators.required],
-      tags: this.fb.array([]),
-      content: ['', Validators.required],
-      image_url: [
-        'https://cdn.pixabay.com/photo/2023/02/28/03/31/man-7819801_1280.jpg',
-        Validators.required
-      ],
-      author: ['sorin', Validators.required],
-      email: ['email@mail.com', [Validators.required, Validators.email]]
-    });
+    let title = 'Man seating in the bus'
+    // eslint-disable-next-line prefer-const
+    let tags = this.fb.array([])
+    let content = 'content'
+    let image_url = 'https://cdn.pixabay.com/photo/2023/02/28/03/31/man-7819801_1280.jpg'
+    let author = 'sorin'
+    let email = 'email@mail.com'
 
     if (this.editMode) {
-      this.selectedPost = this.postService.getPost(this.id);
-      console.log(this.selectedPost);
-      this.form = this.fb.group({
-        title: this.selectedPost.title,
-        tags: this.fb.array(this.selectedPost.tags),
-        content: this.selectedPost.content,
-        image_url: this.selectedPost.image_url,
-        author: this.selectedPost.author,
-        email: this.selectedPost.email
-      });
+      this.selectedPost = this.postService.getPost(this.id)
+      title = this.selectedPost.title
+      this.selectedPost.tags.forEach(tag => {
+        tags.push(new FormControl(tag, Validators.required))
+      })
+      content = this.selectedPost.content
+      image_url = this.selectedPost.image_url || 'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
+      author = this.selectedPost.author
+      email = this.selectedPost.email
+
+
     }
+
+    this.form = this.fb.group({
+      title: [title, Validators.required],
+      tags: tags,
+      content: [content, Validators.required],
+      image_url: [
+        image_url,
+        Validators.required
+      ],
+      author: [author, Validators.required],
+      email: [email, [Validators.required, Validators.email]]
+    });
   }
 
   submitForm() {
@@ -85,7 +100,7 @@ export class AddPostComponent implements OnInit {
     (<FormArray>this.form.get('tags')).push(control);
   }
 
-  getTags() {
+  get getTags() {
     return (<FormArray>this.form.get('tags')).controls;
   }
 
@@ -93,6 +108,7 @@ export class AddPostComponent implements OnInit {
     this.isDirty = $event;
     this.isDirty$.next($event);
   }
+
   canDeactivate(): boolean | Promise<boolean> | Observable<boolean> {
     this.isDirty = this.form.dirty;
     if (!this.form.dirty) {

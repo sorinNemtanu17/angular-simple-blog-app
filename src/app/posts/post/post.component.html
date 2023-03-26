@@ -1,22 +1,29 @@
-<article
-  *ngIf="post$ | async as post"
-  [imageUrl]="post.image_url"
-  appSetBackgroundImage
->
-  <div class="post-details">
-    <h3>{{ post.title }}</h3>
-    <ul class="post-details__tags">
-      <li *ngFor="let tag of post.tags">{{ tag }}</li>
-    </ul>
-    <p>{{ post.content }}</p>
-    <p>{{ post.author }}</p>
-    <p>{{ post.email }}</p>
-    <div class="post-details__button-group">
-      <button class="btn" routerLink="/posts">Back To Posts</button>
-      <button [routerLink]="['/edit-post', post.id]" class="btn">Edit</button>
-      <button (click)="onDelete()" class="btn">Delete</button>
-    </div>
-  </div>
+<article *ngIf="post"
+	[imageUrl]="post.image_url"
+	appSetBackgroundImage>
+	<div class="post-details">
+		<h3>{{ post.title }}</h3>
+		<ul class="post-details__tags">
+			<li *ngFor="let tag of post.tags">{{ tag }}</li>
+		</ul>
+		<p>{{ post.content }}</p>
+		<p>{{ post.author }}</p>
+		<p>{{ post.email }}</p>
+		<div class="post-details__button-group">
+			<button class="btn"
+				routerLink="/posts">
+				Back To Posts
+			</button>
+			<button [routerLink]="['/edit-post', post.id]"
+				class="btn">
+				Edit
+			</button>
+			<button (click)="onDelete()"
+				class="btn">
+				Delete
+			</button>
+		</div>
+	</div>
 </article>
 <!-- <div>
 

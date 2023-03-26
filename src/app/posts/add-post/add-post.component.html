@@ -1,66 +1,74 @@
-<app-alert *ngIf="isDirty" (selection)="onHandleAlert($event)"></app-alert>
+<app-alert *ngIf="isDirty"
+	(selection)="onHandleAlert($event)"></app-alert>
 
 <div class="form-container">
-  <form [formGroup]="form">
-    <div class="form-container__close" routerLink="/posts">
-      <span class="form-container__first"></span>
-      <span class="form-container__last"></span>
-    </div>
-    <fieldset>
-      <legend>
-        <h3>Add Post</h3>
-      </legend>
+	<form [formGroup]="form">
+		<div class="form-container__close"
+			routerLink="/posts">
+			<span class="form-container__first"></span>
+			<span class="form-container__last"></span>
+		</div>
+		<fieldset>
+			<legend>
+				<h3>Add Post</h3>
+			</legend>
 
-      <label>
-        Title
-        <input formControlName="title" id="title" />
-      </label>
-      <div formArrayName="tags" class="form-container__tags-container">
-        <a (click)="addTag()">Add tag</a>
-        <ng-container *ngFor="let item of getTags(); let i = index">
-          <!-- <ng-container *ngFor="let tag of selectedPost.tags; let i = index">
+			<label>
+				Title
+				<input formControlName="title"
+					id="title">
+			</label>
+			<div formArrayName="tags"
+				class="form-container__tags-container">
+				<a (click)="addTag()">Add tag</a>
+				<ng-container *ngFor="let control of getTags; let i = index">
+					<!-- <ng-container *ngFor="let tag of control">
 						<label for="tags">
 							<input [formControlName]="i"
 								id="tags">
 						</label>
 					</ng-container> -->
-          <label for="tags">
-            Tag
-            <input [formControlName]="i" id="tags" />
-          </label>
-        </ng-container>
-      </div>
-      <label for="content">
-        Content
-        <textarea id="content" formControlName="content"></textarea>
-      </label>
+					<label for="tags">
+						Tag
+						<input [formControlName]="i"
+							id="tags">
+					</label>
+				</ng-container>
+			</div>
+			<label for="content">
+				Content
+				<textarea id="content"
+					formControlName="content"></textarea>
+			</label>
 
-      <!-- <div class="file-upload-container">
+			<!-- <div class="file-upload-container">
         <a (click)="filePicker.click()">Add file</a>
         <input #filePicker (change)="onFilePick($event)" type="file" />
         <img *ngIf="imagePreview" [src]="imagePreview" />
       </div> -->
 
-      <label for="image_url">
-        Link
-        <input formControlName="image_url" />
-      </label>
+			<label for="image_url">
+				Link
+				<input formControlName="image_url">
+			</label>
 
-      <label for="author">
-        Author
-        <input formControlName="author" id="author" />
-      </label>
-      <label for="email">
-        Email
-        <input formControlName="email" id="email" />
-      </label>
-      <a (click)="submitForm()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Submit
-      </a>
-    </fieldset>
-  </form>
+			<label for="author">
+				Author
+				<input formControlName="author"
+					id="author">
+			</label>
+			<label for="email">
+				Email
+				<input formControlName="email"
+					id="email">
+			</label>
+			<a (click)="submitForm()">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				Submit
+			</a>
+		</fieldset>
+	</form>
 </div>
