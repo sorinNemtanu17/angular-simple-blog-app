@@ -10,11 +10,11 @@ import { PostsService } from './posts.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent {
-  //posts$: Observable<Post[]> = this.postService.postsChanged$;
-  posts$: Observable<Post[]> = this.httpService.getAllPosts();
+  posts$: Observable<Post[]> = this.postService.postsChanged$;
+  //posts$: Observable<Post[]> = this.httpService.getAllPosts();
 
   constructor(
     private postService: PostsService,
     private httpService: HttpService
-  ) {}
+  ) { }
 }
