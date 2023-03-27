@@ -19,9 +19,9 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - name: Install Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -31,5 +31,12 @@ jobs:
         run: npm run build
       - name: greeting
         run: echo "goodby strange world"
+  greetings:
+    runs-on: ubuntu-latest
 
-
+    steps:
+      - uses: actions/checkout@v3
+      - name: goodby strange world
+        run: echo "goodby strange world"
+      - name: hello strange world
+        run: echo "hello strange world"
