@@ -4,9 +4,7 @@ import { Router } from '@angular/router';
 import { Post } from '@shared/post.model';
 import { map, Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class HttpService {
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -28,7 +26,7 @@ export class HttpService {
       const oldPostIndex = posts.findIndex((post) => post.id === id);
       posts[oldPostIndex] = { ...posts[oldPostIndex], ...newPost }
       return posts
-    })).subscribe(data => {
+    })).subscribe(() => {
 
       this.router.navigate(['/posts', id]);
     })
