@@ -11,4 +11,4 @@ import { AddPostComponent } from './add-post/add-post.component';
   imports: [PostsRoutingModule, SharedModule],
   exports: [PostsComponent, PostComponent]
 })
-export class PostsModule {}
+export class PostsModule { }

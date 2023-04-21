@@ -6,7 +6,6 @@ import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [SetBackgroundImageDirective, AlertComponent],
-  imports: [CommonModule, ReactiveFormsModule],
   exports: [
     CommonModule,
     SetBackgroundImageDirective,
@@ -14,4 +13,4 @@ import { AlertComponent } from './alert/alert.component';
     AlertComponent
   ]
 })
-export class SharedModule {}
+export class SharedModule { }
